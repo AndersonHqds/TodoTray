@@ -51,16 +51,7 @@ const render = (tray = mainTray) => {
 		{
 			type: "separator"
 		},
-		...todos,
-		{
-			type: "separator"
-		},
-		{
-      type: 'normal',
-      label: 'Close TodoTop',
-      role: 'quit',
-      enabled: true,
-    }
+		...todos
 		])
 		//console.log(todos)
 	//tray.setToolTip('This is my application.')

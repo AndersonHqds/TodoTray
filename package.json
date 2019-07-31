@@ -30,6 +30,7 @@
   "eslint": "^6.1.0"
  },
  "dependencies": {
-  "@sentry/electron": "^0.17.3"
+  "@sentry/electron": "^0.17.3",
+  "doc-ready": "^1.0.4"
  }
 }
