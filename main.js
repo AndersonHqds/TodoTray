@@ -13,69 +13,69 @@ let originalObject = []
 app.disableHardwareAcceleration()
 
 const updateJson = () => {
-	originalObject.tasks = todos
-	fs.writeFile("todo.json", JSON.stringify(originalObject), err => {
-		if(err) throw err
-	})
+  originalObject.tasks = todos
+  fs.writeFile("todo.json", JSON.stringify(originalObject), err => {
+    if(err) throw err
+  })
 }
 
 const render = (tray = mainTray) => {
-	
-	todos = todos
-	.map((todo, index) => {
-			return ({
-				label: todo.task || todo.label, type: 'checkbox', click: () => {
-				todos.splice(index, 1)
-				updateJson()
-				render()
-			}})
-		}
-	)
 
-	const contextMenu = Menu.buildFromTemplate([
-		{
-			label: 'Add new task', type: 'normal', click: () => {
-				try{
-					InputBox(
-						"New Task", "Type the task name", 
-						new BrowserWindow({ show: false }), (task) => {
-							if(!task) return
-							const object = { task: task }
-							insertTask(object)
-							todos.push(object)
-							render()
-						}
-					)
-				}
-				catch(err){ console.log(err)}
-			}
-		},
-		{
-			type: "separator"
-		},
-		...todos,
-		{
-			type: "separator"
-		},
-		{
+  todos = todos
+  .map((todo, index) => {
+      return ({
+        label: todo.task || todo.label, type: 'checkbox', click: () => {
+        todos.splice(index, 1)
+        updateJson()
+        render()
+      }})
+    }
+  )
+
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Add new task', type: 'normal', click: () => {
+        try{
+          InputBox(
+            "New Task", "Type the task name",
+            new BrowserWindow({ show: false }), (task) => {
+              if(!task) return
+              const object = { task: task }
+              insertTask(object)
+              todos.push(object)
+              render()
+            }
+          )
+        }
+        catch(err){ console.log(err)}
+      }
+    },
+    {
+      type: "separator"
+    },
+    ...todos,
+    {
+      type: "separator"
+    },
+    {
       type: 'normal',
       label: 'Close TodoTop',
       role: 'quit',
       enabled: true,
     }
-	])
-	
-	tray.setToolTip('This is my application.')
-	tray.setContextMenu(contextMenu)
+  ])
+
+  tray.setToolTip('This is my application.')
+  tray.setContextMenu(contextMenu)
 }
 
 app.on("ready", () => {
-	if(fs.existsSync('./todo.json')){
-		originalObject = JSON.parse(fs.readFileSync('./todo.json'))
-		todos = originalObject.tasks
-	}
+  if(fs.existsSync('./todo.json')){
+    originalObject = JSON.parse(fs.readFileSync('./todo.json'))
+    todos = originalObject.tasks
+  }
 
-	mainTray = new Tray(resolve(__dirname, 'assets','checkedTemplate.png'))
-	render(mainTray)
+  mainTray = new Tray(resolve(__dirname, 'assets','checkedTemplate.png'))
+  render(mainTray)
 })
 
