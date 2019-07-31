@@ -5,14 +5,15 @@
 * npm or yarn
 
 ## Description
-It is a simple todolist app created in ElectronJS, it is useful because the app 
+It is a simple todolist app created in ElectronJS, it is useful because the app
 stay on the Tray. It become fast and practice to use for your daily activities.
 **Obs**: It just works on Linux architecture.
 
 ![O.S Menu Icon](/images/menu-so.png)
-
-### Add tasks in a simply way
+### Useful way to show tasks
 ![O.S Menu List](/images/menu-list.png)
+### Add tasks in a simply way
+![Add new Task](/images/new-todo.png)
 
 ## How to run
 * Clone the repository `git clone https://github.com/AndersonHqds/TodoTray.git`
