@@ -4,7 +4,7 @@
  "main": "main.js",
  "author": "Anderson <contatoahenrique@gmail.com>",
  "description": "A todolist using tray",
- "homepage": "https://andersonhqds.github.io/anderson-dev",
+ "homepage": "https://github.com/AndersonHqds/TodoTray",
  "license": "MIT",
  "build": {
   "appId": "com.electron.todotop",
