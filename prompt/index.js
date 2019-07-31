@@ -67,9 +67,11 @@ function electronPrompt(options, parentWindow) {
 				cleanup();
 			}
 			else{
-				electron.dialog.showErrorBox("Task is empty", "The task can't be empty. Please fill the box with the task name.")
+				electron.dialog.showErrorBox(
+					"Task is empty", 
+					"The task can't be empty. Please fill the box with the task name."
+				)
 			}
-			console.log(value)
 			event.returnValue = null;
 		};
 

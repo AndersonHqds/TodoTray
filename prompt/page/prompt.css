@@ -1,8 +1,8 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5em;
-    color: #333;
-    background-color: #fff;
+    color: #FFF;
+    background: rgb(84, 81, 74);
 }
 
 #container {
@@ -11,7 +11,7 @@ body {
     /* display: flex; */
     height: 100%;
     overflow: auto;
-
+		
 }
 
 #form {
@@ -20,9 +20,10 @@ body {
 
 #label {
     max-width: 100%;
-    max-height: 100%;
+		max-height: 100%;
+		text-align: center;
     margin-bottom: .8em;
-    padding: 0 .5em;
+		padding: 0 .5em;
     /* white-space: nowrap; */
     /* overflow: hidden; */
     /* text-overflow: ellipsis; */
@@ -52,20 +53,20 @@ select#data {
 }
 
 #buttons > button {
-    border-radius: 2px;
+    border-radius: 4px;
     border: 0;
     margin: 0 0 0 .5em;
     font-size: .8em;
     line-height: 1em;
-    padding: .6em 1em
+		padding: .6em 1em;
 }
 
 #ok {
     background-color: #3879D9;
-    color: white;
+    color: #FFF;
 }
 
 #cancel {
-    background-color: #DDD;
+    background-color: #FFF;
     color: black;
 }

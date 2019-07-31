@@ -6,6 +6,4 @@ const InputBox = (title, label, parent, callback) => {
 	.catch(error => console.log(error))
 }
 
-
-
 module.exports = { InputBox }
