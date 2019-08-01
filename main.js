@@ -24,7 +24,7 @@ const render = (tray = mainTray) => {
   todos = todos
   .map((todo, index) => {
       return ({
-        label: `Task: ${ todo.task || todo.label }`, type: 'checkbox', click: () => {
+        label: `${ todo.task || todo.label }`, type: 'checkbox', click: () => {
         todos.splice(index, 1)
         updateJson()
         render()
@@ -51,8 +51,16 @@ const render = (tray = mainTray) => {
       }
     },
     {
-      type: "separator"
-    },
+			type: "separator",
+		},
+		{
+			type: "normal",
+			label: "______Tasks______",
+			enabled: false
+		},
+		{
+			type: "separator",
+		},
     ...todos,
     {
       type: "separator"
