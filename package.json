@@ -1,5 +1,5 @@
 {
- "name": "todotop",
+ "name": "TodoTray",
  "version": "1.0.2",
  "main": "main.js",
  "author": "Anderson <contatoahenrique@gmail.com>",
@@ -7,8 +7,8 @@
  "homepage": "https://github.com/AndersonHqds/TodoTray",
  "license": "MIT",
  "build": {
-  "appId": "com.electron.todotop",
-  "productName": "TodoTop",
+  "appId": "com.electron.todotray",
+  "productName": "TodoTray",
   "icon": "./build/icons",
   "linux": {
    "category": "Utility",
